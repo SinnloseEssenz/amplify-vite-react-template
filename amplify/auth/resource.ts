@@ -10,7 +10,7 @@ export const auth = defineAuth({
         scopes: ['profile', 'email', 'openid'],
         attributeMapping: {
           email: 'email',
-          preferredUsername: 'name',
+          givenName: 'name',
           profilePicture: 'picture'
         }
       },
@@ -31,13 +31,13 @@ export const auth = defineAuth({
       required: true,
       mutable: true,
     },
-    preferredUsername: {
+    givenName: {
       required: false,
       mutable: true,
     },
     profilePicture: {
       required: false,
       mutable: true,
-    },
+    }
   },
 });
