@@ -9,9 +9,7 @@ export const auth = defineAuth({
         clientSecret: secret('GOOGLE_CLIENT_SECRET'),
         scopes: ['profile', 'email', 'openid'],
         attributeMapping: {
-          email: 'email',
-          givenName: 'name',
-          profilePicture: 'picture'
+          email: 'email'
         }
       },
       callbackUrls: [
@@ -29,14 +27,6 @@ export const auth = defineAuth({
   userAttributes: {
     email: {
       required: true,
-      mutable: true,
-    },
-    givenName: {
-      required: false,
-      mutable: true,
-    },
-    profilePicture: {
-      required: false,
       mutable: true,
     }
   },
