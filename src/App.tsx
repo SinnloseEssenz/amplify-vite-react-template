@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
-import { useAuthenticator } from '@aws-amplify/ui-react';
+import { Authenticator, useAuthenticator, ThemeProvider, Theme } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/data";
+import '@aws-amplify/ui-react/styles.css';
+import { signInWithRedirect } from 'aws-amplify/auth';
 
 const client = generateClient<Schema>();
 
-function App() {
+function TodoList() {
   const { user, signOut } = useAuthenticator();
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
 
@@ -41,7 +43,22 @@ function App() {
         </a>
       </div>
       <button onClick={signOut}>Sign out</button>
+      <button onClick={() => signInWithRedirect({ provider: 'Google' })}>
+        Sign in with Google
+      </button>
     </main>
+  );
+}
+
+function App() {
+  return (
+    <ThemeProvider theme={Theme.Light}>
+      <Authenticator.Provider>
+        <Authenticator>
+          <TodoList />
+        </Authenticator>
+      </Authenticator.Provider>
+    </ThemeProvider>
   );
 }
 
