@@ -16,9 +16,14 @@ export const auth = defineAuth({
       },
       callbackUrls: [
         'http://localhost:5173/',
-        'http://localhost:5173/'
+        'https://journalcoach.org/',
+        'https://www.journalcoach.org/'
       ],
-      logoutUrls: ['http://localhost:5173/', 'http://localhost:5173/'],
+      logoutUrls: [
+        'http://localhost:5173/',
+        'https://journalcoach.org/',
+        'https://www.journalcoach.org/'
+      ],
     }
   },
   userAttributes: {
