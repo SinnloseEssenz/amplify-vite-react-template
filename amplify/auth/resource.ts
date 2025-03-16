@@ -5,8 +5,8 @@ export const auth = defineAuth({
     email: true,
     externalProviders: {
       google: {
-        clientId: secret('arn:aws:secretsmanager:eu-north-1:061039799078:secret:GOOGLE_CLIENT_ID'),
-        clientSecret: secret('arn:aws:secretsmanager:eu-north-1:061039799078:secret:GOOGLE_CLIENT_SECRET'),
+        clientId: secret('GOOGLE_CLIENT_ID'),
+        clientSecret: secret('GOOGLE_CLIENT_SECRET'),
         scopes: ['profile', 'email', 'openid'],
         attributeMapping: {
           email: 'email'
