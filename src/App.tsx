@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Schema } from "../amplify/data/resource";
-import { Authenticator, useAuthenticator, ThemeProvider, Theme } from '@aws-amplify/ui-react';
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
 import { generateClient } from "aws-amplify/data";
 import '@aws-amplify/ui-react/styles.css';
 import { signInWithRedirect } from 'aws-amplify/auth';
@@ -52,13 +52,9 @@ function TodoList() {
 
 function App() {
   return (
-    <ThemeProvider theme={Theme.Light}>
-      <Authenticator.Provider>
-        <Authenticator>
-          <TodoList />
-        </Authenticator>
-      </Authenticator.Provider>
-    </ThemeProvider>
+    <Authenticator>
+      <TodoList />
+    </Authenticator>
   );
 }
 
