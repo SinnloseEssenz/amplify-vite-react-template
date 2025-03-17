@@ -15,12 +15,14 @@ export const auth = defineAuth({
       callbackUrls: [
         'http://localhost:5173/',
         'https://journalcoach.org/',
-        'https://www.journalcoach.org/'
+        'https://www.journalcoach.org/',
+        'https://auth.journalcoach.org/'
       ],
       logoutUrls: [
         'http://localhost:5173/',
         'https://journalcoach.org/',
-        'https://www.journalcoach.org/'
+        'https://www.journalcoach.org/',
+        'https://auth.journalcoach.org/'
       ],
     }
   },
@@ -29,5 +31,5 @@ export const auth = defineAuth({
       required: true,
       mutable: true,
     }
-  },
+  }
 });
