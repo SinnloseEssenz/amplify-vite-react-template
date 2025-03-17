@@ -13,16 +13,15 @@ export const auth = defineAuth({
         }
       },
       callbackUrls: [
-        'http://localhost:5173/',
+        'https://auth.journalcoach.org/oauth2/idpresponse',
         'https://journalcoach.org/',
         'https://www.journalcoach.org/',
-        'https://auth.journalcoach.org/'
+        'http://localhost:5173/'
       ],
       logoutUrls: [
-        'http://localhost:5173/',
         'https://journalcoach.org/',
         'https://www.journalcoach.org/',
-        'https://auth.journalcoach.org/'
+        'http://localhost:5173/'
       ],
     }
   },
