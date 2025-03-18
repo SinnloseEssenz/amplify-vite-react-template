@@ -13,7 +13,6 @@ export const auth = defineAuth({
         }
       },
       callbackUrls: [
-        'https://6f512b82687c5296cd51.auth.eu-north-1.amazoncognito.com/oauth2/idpresponse',
         'https://auth.journalcoach.org/oauth2/idpresponse',
         'https://journalcoach.org/',
         'https://www.journalcoach.org/',
