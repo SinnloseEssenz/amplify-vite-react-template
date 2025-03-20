@@ -126,14 +126,12 @@ function JournalApp() {
 function App() {
   return (
     <Authenticator>
-      {({ user }) => (
-        <>
-          <JournalApp />
-          <Button onClick={() => signInWithRedirect({ provider: 'Google' })}>
-            Sign in with Google
-          </Button>
-        </>
-      )}
+      <>
+        <JournalApp />
+        <Button onClick={() => signInWithRedirect({ provider: 'Google' })}>
+          Sign in with Google
+        </Button>
+      </>
     </Authenticator>
   );
 }
